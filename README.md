@@ -20,8 +20,6 @@ $ pnpm wrangler generate worker-fal-ai-proxy https://github.com/denizcdemirci/wo
 
 This template uses fal.ai Key-Based Authentication and requires one key. You can create a key [here](https://fal.ai/dashboard/keys).
 
-For more information, please refer to the [fal.ai documentation](https://fal.ai/docs).
-
 Before publishing your script, you need to edit the `wrangler.toml` file. Add your fal.ai key `FAL_KEY` this file. More information about configuring and publishing your script can be found [in the documentation](https://developers.cloudflare.com/workers/get-started/guide/).
 
 Once you are ready, you can publish your script by running the following command:
@@ -33,3 +31,17 @@ $ yarn run deploy
 # or
 $ pnpm run deploy
 ```
+
+## Configure the client
+
+To use the proxy, you need to configure the client to use the proxy endpoint. You can do that by setting the `proxyUrl` option in the client configuration:
+
+```js
+import * as fal from "@fal-ai/serverless-client";
+
+fal.config({
+  proxyUrl: "https://your-worker.workers.dev",
+});
+```
+
+For more information, please refer to the [fal.ai documentation](https://fal.ai/docs).
