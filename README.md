@@ -46,6 +46,6 @@ fal.config({
 
 For more information, please refer to the [fal.ai documentation](https://fal.ai/docs).
 
-## Notes
+## Notes
 
 Although this is a nice alternative to hide `FAL_KEY`, please note that this endpoint will be publicly available. I recommend adding your own authentication structure and updating the headers in [`src/index.ts`](https://github.com/denizcdemirci/worker-fal-ai-proxy/blob/main/src/index.ts).
