@@ -48,4 +48,17 @@ For more information, please refer to the [fal.ai documentation](https://fal.ai/
 
 ## Notes
 
-Although this is a nice alternative to hide `FAL_KEY`, please note that this endpoint will be publicly available. I recommend adding your own authentication structure and updating the headers in [`src/index.ts`](https://github.com/denizcdemirci/worker-fal-ai-proxy/blob/main/src/index.ts).
+Although this is a nice alternative to hide `FAL_KEY`, please note that this endpoint will be publicly available. I recommend adding your own authentication structure and updating the headers in [`src/index.ts`](https://github.com/denizcdemirci/worker-fal-ai-proxy/blob/main/src/index.ts). You can also add your auth token to requests using `requestMiddleware`. Here is an example:
+
+```js
+fal.config({
+  requestMiddleware: async (request) => {
+    request.headers = {
+      ...request.headers,
+      Authorization: `your_auth_token`,
+    };
+
+    return request;
+  },
+});
+```
