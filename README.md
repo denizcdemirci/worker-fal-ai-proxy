@@ -37,10 +37,10 @@ $ pnpm run deploy
 To use the proxy, you need to configure the client to use the proxy endpoint. You can do that by setting the `proxyUrl` option in the client configuration:
 
 ```js
-import * as fal from "@fal-ai/serverless-client";
+import * as fal from '@fal-ai/serverless-client';
 
 fal.config({
-  proxyUrl: "https://your-worker.workers.dev",
+  proxyUrl: 'https://your-worker.workers.dev',
 });
 ```
 
@@ -55,7 +55,7 @@ fal.config({
   requestMiddleware: async (request) => {
     request.headers = {
       ...request.headers,
-      Authorization: `your_auth_token`,
+      Authorization: 'your_auth_token',
     };
 
     return request;
