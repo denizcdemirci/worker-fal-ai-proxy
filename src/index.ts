@@ -5,7 +5,7 @@ const FAL_URL_REG_EXP = /(\.|^)fal\.(run|ai)$/;
 const EXCLUDED_HEADERS = ['Content-Length', 'Content-Encoding'];
 const CORS_HEADERS = {
   'Access-Control-Allow-Origin': '*',
-  'Access-Control-Allow-Methods': 'GET, POST, OPTIONS',
+  'Access-Control-Allow-Methods': 'GET, POST, PUT, OPTIONS',
   'Access-Control-Allow-Headers': '*'
 };
 
