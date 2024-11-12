@@ -15,7 +15,7 @@ export default {
       return new Response(null, { headers: CORS_HEADERS });
     }
 
-    if (request.method !== 'GET' && request.method !== 'POST') {
+    if (request.method !== 'GET' && request.method !== 'POST' && request.method !== 'PUT') {
       return new Response(null, {
         status: 405,
         headers: CORS_HEADERS
